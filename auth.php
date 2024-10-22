@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['do_signin'])) {
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['do_signin'])) {
     $user = $stmt->fetch();
 
     if (hash_equals($user['hashedPassword'], hash('sha256', $password))) {
-        session_start();
+
         $_SESSION['email'] = $user['email'];
         $_SESSION['fullName'] = $user['fullName'];
         $_SESSION['isAdmin'] = $user['isAdmin'];

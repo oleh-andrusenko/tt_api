@@ -204,4 +204,9 @@ drop table users;
 
 
 select *
-from rent
+from
+
+
+
+
+UPDATE cars SET price = price / 100;

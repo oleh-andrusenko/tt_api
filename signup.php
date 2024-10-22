@@ -1,8 +1,6 @@
 <?php
-
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['do_signup'])) {
-    print_r($_POST);
-
     $email = $_POST['login'];
     $password = $_POST['password'];
     $fullName = $_POST['fullName'];

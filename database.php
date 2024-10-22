@@ -1,7 +1,7 @@
 <?php
 
 
-$host = '127.127.126.50';
+$host = 'localhost';
 $port = 3306;
 $dbName = 'rentacar';
 $username = 'root';

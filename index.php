@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'database.php';
 
 $stmt = $pdo->prepare('SELECT * FROM cars WHERE isFree = 1 ORDER BY id DESC');

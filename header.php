@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+
+
 ?>
 
 
@@ -8,7 +11,7 @@ session_start();
                                                                                   alt="Renta Car logo">Renta Car</a>
     <div class="flex gap-2 items-center">
 
-        <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] === 1): ?>
+        <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1): ?>
             <a href="rented.php"
                class="bg-amber-500 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-amber-500 border-2 hover:bg-white hover:text-amber-500">[
                 Rented cars list]</a>
@@ -49,4 +52,5 @@ session_start();
 
 
     </div>
+
 </header>

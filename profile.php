@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('database.php');
 
 $id = $_GET['id'];
@@ -44,6 +44,10 @@ $user = $stmt->fetch();
                 <p><?=$value?></p>
             </div>
         <?php endforeach;?>
+        <form action="deleteUser.php" method="post">
+            <input type="hidden" name="userId" value="<?=$user['userId']?>">
+            <input type="submit" value="Delete account">
+        </form>
     </div>
 </main>
 

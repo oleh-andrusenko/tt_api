@@ -1,4 +1,5 @@
 <?php
+
 require 'middleware.php';
 
 require 'database.php';
