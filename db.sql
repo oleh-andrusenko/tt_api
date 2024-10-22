@@ -1,4 +1,5 @@
-DROP TABLE cars;
+CREATE DATABASE rentacar;
+USE rentacar;
 CREATE TABLE cars
 (
     id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,11 +21,6 @@ CREATE TABLE rent
     fullName   varchar(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-
-select *
-from rent;
-
 
 
 INSERT INTO cars (brand, model, year, volume, fuel, price)
@@ -50,8 +46,6 @@ VALUES ('Mazda', 'CX-5', '2023', 2.5, 'Gasoline', 33000),
        ('Jeep', 'Wrangler', '2022', 3.6, 'Gasoline', 40000),
        ('Land Rover', 'Range Rover', '2023', 3.0, 'Diesel', 95000),
        ('Acura', 'MDX', '2023', 3.5, 'Gasoline', 58000);
-select *
-from cars;
 
 
 ALTER TABLE cars
@@ -154,12 +148,17 @@ SET description = 'No description available'
 WHERE description IS NULL
    OR description = '';
 
+CREATE TABLE users
+(
+    userId         INT PRIMARY KEY AUTO_INCREMENT,
+    email          VARCHAR(255) NOT NULL UNIQUE,
+    fullName       VARCHAR(255) NOT NULL,
+    hashedPassword VARCHAR(255) NOT NULL,
+    birthDate      DATE
+);
+ALTER TABLE users
+    ADD COLUMN isAdmin BOOLEAN DEFAULT FALSE;
 
-select *
-from cars;
-
-select *
-from rent;
 
 select rent.car_id,
        rent.startDate,
@@ -193,16 +192,7 @@ WHERE isFree = 0;
 
 
 
-CREATE TABLE users
-(
-    userId         INT PRIMARY KEY AUTO_INCREMENT,
-    email          VARCHAR(255) NOT NULL UNIQUE,
-    fullName       VARCHAR(255) NOT NULL,
-    hashedPassword VARCHAR(255) NOT NULL,
-    birthDate      DATE
-);
-ALTER TABLE users
-    ADD COLUMN isAdmin BOOLEAN DEFAULT FALSE;
+
 
 
 SELECT userId, email, fullName, birthDate, isAdmin
