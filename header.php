@@ -8,18 +8,18 @@ session_start();
 
 <header class="h-16 bg-white/70 backdrop-blur px-4 py-2 flex justify-between sticky top-0 z-10 border-b border-blue-500">
     <a href="index.php" class="text-blue-500 font-bold text-3xl flex gap-4 "><img class="h-10" src="/public/logo.png"
-                                                                                  alt="Renta Car logo">Renta Car</a>
+                                                                                  alt="RentaCar logo">Renta Car</a>
     <div class="flex gap-2 items-center">
 
         <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1): ?>
             <a href="rented.php"
-               class="bg-amber-500 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-amber-500 border-2 hover:bg-white hover:text-amber-500">[
+               class="bg-indigo-400 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-indigo-400 border-2 hover:bg-white hover:text-indigo-400">[
                 Rented cars list]</a>
             <a href="users.php"
-               class="bg-lime-500 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-lime-500 border-2 hover:bg-white hover:text-lime-500">[
+               class="bg-indigo-400 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-indigo-400 border-2 hover:bg-white hover:text-indigo-400">[
                 Users list]</a>
             <a href="create.php"
-               class="bg-green-500 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-green-500 border-2 hover:bg-white hover:text-green-500">[+
+               class="bg-indigo-400 px-2 py-1 rounded-lg flex items-center justify-center text-white font-semibold border-indigo-400 border-2 hover:bg-white hover:text-indigo-400">[+
                 Add car]</a>
         <?php endif; ?>
 

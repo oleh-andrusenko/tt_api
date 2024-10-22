@@ -36,14 +36,14 @@ $cars = $stmt->fetchAll();
 <p class="text-center">
     <strong> <?= count($cars) ?> </strong> cars found.
 </p>
-<div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-6 ">
+<div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 py-6 ">
     <?php foreach ($cars as $car) : ?>
         <div class="shadow-xl rounded-lg px-4 py-2  flex gap-4 border-2 border-blue-500">
             <div class="w-1/3 flex items-center justify-center">
                 <img src="/public/svgs/<?= str_replace('-', ' ', strtolower($car['brand'])) . '.svg' ?>"
                      alt="<?= $car['brand'] ?>" class="w-16 h-16">
             </div>
-            <div>
+            <div class="flex flex-col justify-between ">
                 <p class="font-bold text-xl text-blue-500"><?= $car['brand'] . ' ' . $car['model'] . ' ' . $car['year'] ?></p>
                 <p>
                     <span class="font-bold">Engine volume:</span> <?= $car['volume'] != 0 ? $car['volume'] . ' l' : '-' ?>
@@ -51,7 +51,7 @@ $cars = $stmt->fetchAll();
                 <p><span class="font-bold">Fuel:</span> <?= $car['fuel'] ?></p>
                 <p><span class="font-bold">Price per day:</span> $<?= $car['price'] ?></p>
 
-                <a class="mt-6 block w-full text-center bg-blue-500 rounded-lg text-sm text-white px-2 py-2 border-2 border-blue-500 hover:bg-white hover:text-blue-500"
+                <a class="mt-6 block w-[200px] text-center bg-blue-500 rounded-lg text-sm text-white px-2 py-2 border-2 border-blue-500 hover:bg-white hover:text-blue-500"
                    href="car.php?id=<?= $car['id'] ?>">Details</a>
 
 

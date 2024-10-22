@@ -36,17 +36,17 @@ $user = $stmt->fetch();
 
 <main class="px-24 py-10 flex items-center justify-center">
     <div class="w-[500px] px-6 py-8 border-slate-300 border-2 rounded">
-        <h2 class="text-xl font-semibold text-center">Your profile</h2>
+        <h2 class="text-3xl font-semibold text-center text-blue-500 mb-8">Your profile info</h2>
         <?php foreach($user as $key=>$value): ?>
 
-            <div class="flex items-center justify-between gap-4 border-b">
-                <p class="font-semibold py-2"><?=$key?></p>
+            <div class="flex items-center justify-between gap-8 border-b">
+                <p class="font-semibold py-2 uppercase"><?=$key?></p>
                 <p><?=$value?></p>
             </div>
         <?php endforeach;?>
-        <form action="deleteUser.php" method="post">
+        <form action="deleteUser.php" method="post" class="mt-10">
             <input type="hidden" name="userId" value="<?=$user['userId']?>">
-            <input type="submit" value="Delete account">
+            <input class="w-full bg-red-500 text-white font-semibold px-2 py-1 text-center rounded border-2 border-red-600 cursor-pointer" type="submit" value="Delete account">
         </form>
     </div>
 </main>

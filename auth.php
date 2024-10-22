@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['do_signin'])) {
     } else echo 'PASSWORD WRONG';
 
 
-
 //    exit;
 
 }
@@ -58,13 +57,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['do_signin'])) {
         <h2 class="text-3xl font-semibold text-blue-500 my-4 text-center">Welcome back to RentaCar</h2>
         <div class="flex items-center gap-2">
             <p class="font-bold w-1/4">Login: </p>
-            <input class="w-3/4 rounded-sm border" type="text" name="login" id="login">
+            <input class="w-3/4 rounded-sm border px-3 py-1 text-slate-800" type="text" name="login" id="login">
         </div>
         <div class="flex items-center gap-2">
             <p class="font-bold w-1/4">Password:</p>
-            <input class="w-3/4 rounded-sm border" type="password" name="password" id="password">
+            <input
+                    class="w-3/4 rounded-sm border px-3 py-1 text-slate-800"
+                    type="password"
+                    name="password"
+                    id="password">
         </div>
-        <input class="rounded bg-blue-500 text-white rounded py-2 mt-4 cursor-pointer" type="submit" value="Login"
+        <input class="rounded bg-blue-500 text-white rounded py-2 mt-4 cursor-pointer"
+               type="submit"
+               value="Login"
                name="do_signin">
         <p>
             Doesn`t have an account yet? <a class="ml-2 text-blue-400 font-semibold underline" href="signup.php">Register
