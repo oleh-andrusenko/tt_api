@@ -33,6 +33,21 @@ $carPhotos = !empty($car['photos']) ? explode(';', $car['photos']) : [];
     <title>
         <?= $car['brand'] . ' ' . $car['model'] . ' ' . $car['year'] ?>
     </title>
+
+    <style>
+        #slider {
+            display: flex;
+            gap: 8px;
+        }
+        .slide{
+            display: none;
+        }
+        #slider img{
+            width: 500px;
+            height: 320px;
+        }
+    </style>
+    <script src="slider.js" defer></script>
 </head>
 
 <body>
@@ -97,12 +112,13 @@ $carPhotos = !empty($car['photos']) ? explode(';', $car['photos']) : [];
             </div>
         </div>
         <div>
-            <div class="py-4 grid grid-cols-1 gap-2">
+            <div id="slider">
                 <?php foreach ($carPhotos as $carPhoto): ?>
-                    <div class="rounded h-[300px] bg-[url('uploads/<?= $carPhoto ?>')] bg-cover bg-center h-[400px]">
-                    </div>
+                        <img src="/uploads/<?= $carPhoto ?>" alt="Car photo">
                 <?php endforeach; ?>
+
             </div>
+
         </div>
     </div>
 </main>
