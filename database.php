@@ -1,9 +1,9 @@
 <?php
 
 
-$host = 'localhost';
+$host = '127.127.126.50';
 $port = 3306;
-$dbName = 'rentacar';
+$dbName = 'cars';
 $username = 'root';
 $password = 'root';
 
